@@ -1,0 +1,80 @@
+/**
+ * Created by hxsd on 2016/6/6.
+ */
+//创建主模块
+var loveAmoy = angular.module("loveAmoy",["ionic"]);
+//index控制器
+angular.module("loveAmoy").controller("indexCtrl", function ($rootScope) {
+    //定义变量，控制“移到顶部”显示与隐藏(只在无限滚动时出现)
+    $rootScope.moveTop = false;
+});
+//配置路由
+loveAmoy.config(function ($stateProvider,$urlRouterProvider,$ionicConfigProvider) {
+    //跨平台兼容性
+    $ionicConfigProvider.platform.ios.tabs.style('standard');
+    $ionicConfigProvider.platform.ios.tabs.position('bottom');
+    $ionicConfigProvider.platform.android.tabs.style('standard');
+    $ionicConfigProvider.platform.android.tabs.position('bottom');
+    $ionicConfigProvider.platform.ios.navBar.alignTitle('center');
+    $ionicConfigProvider.platform.android.navBar.alignTitle('center');
+    $ionicConfigProvider.platform.ios.backButton.previousTitleText('').icon('ion-ios-arrow-thin-left');
+    $ionicConfigProvider.platform.android.backButton.previousTitleText('').icon('ion-android-arrow-back');
+    $ionicConfigProvider.platform.ios.views.transition('ios');
+    $ionicConfigProvider.platform.android.views.transition('android');
+    //选项卡页面
+    $stateProvider.state("tabs",{
+        url:"/tabs",
+        abstract:true,
+        templateUrl:"views/tabs/tabs.html"
+    });
+    //首页
+    $stateProvider.state("tabs.home",{
+        url:"/home",
+        views:{
+            "tab-home":{templateUrl:"views/home/home.html",controller:"homeCtrl"}
+        }
+    });
+    //微淘
+    $stateProvider.state("tabs.microTao",{
+        url:"/microTao",
+        views:{
+            "tab-microTao":{templateUrl:"views/microTao/microTao.html",controller:"microCtrl"}
+        }
+    });
+    //发现
+    $stateProvider.state("tabs.find",{
+        url:"/find",
+        views:{
+            "tab-find":{templateUrl:"views/find/find.html",controller:"findCtrl"}
+        }
+    });
+    //商品详细页面
+    $stateProvider.state("tabs.detail",{
+        url:"/detail",
+        views:{
+            "tab-find":{templateUrl:"views/find/detail.html",controller:"detailCtrl"}
+        }
+    });
+    //购物车
+    $stateProvider.state("tabs.cart",{
+        url:"/cart",
+        views:{
+            "tab-cart":{templateUrl:"views/cart/cart.html",controller:"cartCtrl"}
+        }
+    });
+    //我的爱淘
+    $stateProvider.state("tabs.myLoveAmoy",{
+        url:"/myLoveAmoy",
+        views:{
+            "tab-myLoveAmoy":{templateUrl:"views/myLoveAmoy/myLoveAmoy.html",controller:"myLoveAmoyCtrl"}
+        }
+    });
+    //引导页
+    $stateProvider.state("LoveAmoy",{
+        url:"/LoveAmoy",
+       templateUrl:"views/LoveAmoy/LoveAmoy.html",
+        controller:"LoveAmoyCtrl"
+    });
+    //默认页 最终修改为引导页
+    $urlRouterProvider.otherwise("/LoveAmoy");
+});

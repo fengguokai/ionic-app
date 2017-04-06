@@ -1,0 +1,50 @@
+<ion-view view-title="购物车">
+    <ion-header-bar class="bar bar-assertive">
+        <h1 class="title">购物车（4）</h1>
+    </ion-header-bar>
+    <ion-content class="stable-bg">
+        <ion-list class="carts">
+            <ion-item class="card cartShop" ng-repeat="item in cartShop">
+                <div class="row">
+                    <i class="icon ion-ios-arrow-back"></i>
+                    <img ng-src="{{item.fShopImg}}">
+                    <span>{{item.fShopName}}</span>
+                </div>
+                <hr>
+                <ion-list>
+                    <ion-item ng-repeat="itemCart in cart | filter:{fShopID:item.id}" class="row cart">
+                        <div class="col col-5">
+                            <input type="checkbox">
+                        </div>
+                        <div class="col col-15">
+                            <a href="#tabs/detail"><img ng-src="{{itemCart.fImg}}"></a>
+                        </div>
+                        <div class="col col-60">
+                            <h3>{{itemCart.fTitle}}</h3>
+                            <span class="colorAndSize">颜色：{{itemCart.fColor}} 尺寸：{{itemCart.fSize}}</span>
+                            <p><span class="newPrice assertive">{{itemCart.fPrice|currency:"￥"}}</span><span class="oldPrice">{{itemCart.fOldPrice|currency:"￥"}}</span></p>
+                            <div class="row number">
+                                <i class="icon ion-minus col col-10" ng-click="addOrMinusNum('minus')"></i>
+                                <input type="text" value="1" ng-model="inputNum" class="col col-10">
+                                <i class="icon ion-plus col col-10" ng-click="addOrMinusNum('add')"></i>
+                            </div>
+                        </div>
+                    </ion-item>
+                </ion-list>
+            </ion-item>
+        </ion-list>
+        <div class="checkOut row stable-bg card">
+            <div class="col col-50">
+                <input type="checkbox">全选
+            </div>
+            <div class="col col-30">
+                <h6>合计：</h6>
+                <h6>不含运费</h6>
+            </div>
+            <div class="col col-20">
+                <button class="button button-assertive button-full">结算</button>
+        </div>
+
+        </div>
+    </ion-content>
+</ion-view>

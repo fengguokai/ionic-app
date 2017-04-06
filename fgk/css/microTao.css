@@ -1,0 +1,39 @@
+.scroll-content .scroll #menuBar,#menuBar .list{
+    margin: 0;
+    padding: 0;
+}
+#menuBar .col{
+    padding-left: 0;
+    padding-top: 0;
+}
+.col-28{
+    flex: 0 0 28%;
+    max-width: 28%;
+}
+.col-72{
+    flex: 0 0 72%;
+    max-width: 72%;
+}
+#menuBar img{
+    width: 80px;
+    height: 80px;
+}
+#menuBar h2{
+    color: red;
+}
+#menuList .secondClass .list{
+    /*width: 320px;*/
+}
+.thirdClass .item{
+    float: left;
+    margin: 3px;
+    padding: 0;
+    text-align: center;
+ }
+.thirdClass .item h5{
+    line-height: 18px;
+    padding-bottom: 3px;
+}
+#menuList .item{
+    border:none;
+}

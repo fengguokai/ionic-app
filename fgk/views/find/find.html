@@ -1,0 +1,29 @@
+<ion-view view-title="发现">
+    <ion-header-bar class="bar bar-assertive" id="findHeader">
+        <label class="item-input text-right item-icon-right">
+            <input type="text"id="search">
+            <i class="icon ion-search placeholder-icon"></i>
+        </label>
+    </ion-header-bar>
+    <ion-content>
+        <ion-list class="bar-subheader stable-bg" id="searchItem">
+            <a href="" class="item assertive">综合排序</a>
+            <a href="" class="item dark">销量优先</a>
+            <a href="" class="item dark">筛选</a>
+        </ion-list>
+        <ion-list id="goods">
+            <a href="#/tabs/detail" class="item item-thumbnail-left"
+               ng-repeat="item in guess"
+               ng-click="selectGood(item.id)"
+            >
+                <img ng-src="{{item.fImg}}">
+                <h2>{{item.fTitle}}</h2>
+                <span class="assertive">{{item.fPrice | currency:"￥"}}</span>
+                <p class="dark">
+                    <span>月销{{item.fRecord}}笔</span>
+                    <span>{{item.fPostage}}</span>
+                </p>
+            </a>
+        </ion-list>
+    </ion-content>
+</ion-view>

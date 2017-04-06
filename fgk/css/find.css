@@ -1,0 +1,27 @@
+#findHeader .item-input{
+    margin-bottom: 10px;
+    border-bottom: 2px solid #fff;
+    padding: 6px 10px 5px 60px;
+    width: 60%;
+    color: #fff;
+    margin-left: 54px;
+}
+#findHeader .placeholder-icon,#search{
+    color: #fff;
+    font-size: 16px;
+}
+#searchItem .item{
+    float: left;
+    width: 33%;
+    text-align: center;
+    border: none;
+}
+#goods .list{
+    width: 100%;
+}
+#goods .item h2{
+    white-space: pre-line;
+}
+#goods img{
+    border-radius: 10px;
+}

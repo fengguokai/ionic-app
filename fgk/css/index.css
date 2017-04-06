@@ -1,0 +1,26 @@
+#loveTabs .tab-item .icon {
+    height: 28px;
+    font-size: 28px;
+}
+.bar.bar-assertive,.tabs.tabs-assertive{
+    border-color: red;
+    background-color: red;
+    opacity: 1;
+    color: #fff;
+}
+.assertive{
+    color: red;
+}
+#move-top{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: fixed;
+    right: 5px;
+    bottom: 55px;
+    background-color: lightsalmon;
+    color: #fff;
+    font-size: 25px;
+    text-align: center;
+    z-index: 1000;
+}

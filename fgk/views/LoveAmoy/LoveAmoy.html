@@ -1,0 +1,17 @@
+<ion-view id="LoveAmoy">
+    <span id="skip" ng-click="skip()">跳过</span>
+    <ion-slide-box show-pager="true" on-slide-changed="onSlideChanged()">
+        <ion-slide>
+            <img src="images/LoveAmoy1.jpg">
+        </ion-slide>
+        <ion-slide>
+            <img src="images/LoveAmoy2.jpg">
+        </ion-slide>
+        <ion-slide>
+            <img src="images/LoveAmoy3.jpg">
+        </ion-slide>
+        <ion-slide on-swipe-left="swipeLeft()">
+            <img src="images/LoveAmoy4.jpg">
+        </ion-slide>
+    </ion-slide-box>
+</ion-view>

@@ -1,0 +1,45 @@
+.colorAndSize{
+    color: #ccc;
+}
+.cart .col-60{
+    font-size: 12px;
+    padding-right: 2px;
+}
+.cart h3{
+    white-space: pre-wrap;
+    font-size: 12px;
+}
+.cart  .col-60 .newPrice{
+    font-size: 18px;
+}
+.cart  .col-60 .oldPrice{
+    text-decoration: line-through;
+}
+.cartShop{
+    margin: 20px 0;
+}
+.cartShop img{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+.cart img{
+    width:100px;
+    height:120px;
+    border-radius: 5px;
+}
+.carts:first-child .cartShop{
+    margin-top: 0;
+}
+.number .icon,.number input{
+    border: 1px solid #ccc;
+    height: 30px;
+    width: 40px;
+    color: #fff;
+    background-color: #ccc;
+}
+.number input{
+    color: black;
+    background-color: #fff;
+    text-align: center;
+}

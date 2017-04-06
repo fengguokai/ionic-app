@@ -1,0 +1,123 @@
+<ion-view>
+    <ion-content class="stable-bg">
+        <div id="intro">
+            <a class="back" href="#/tabs/find">
+                <i class="icon ion-ios-arrow-left"></i>
+            </a>
+            <ion-slide-box show-pager="true">
+                <ion-slide>
+                    <img src="images/pic13.png">
+                </ion-slide>
+                <ion-slide>
+                    <img src="images/pic14.png">
+                </ion-slide>
+                <ion-slide>
+                    <img src="images/pic15.png">
+                </ion-slide>
+            </ion-slide-box>
+            <a class="cart" href="#/tabs/cart">
+                <i class="icon ion-ios-cart"></i>
+            </a>
+        </div>
+        <div id="goodInfo" class="light-bg">
+            <h3>天天特价女装连衣裙夏波西米亚沙滩裙海边度假长裙印花雪纺背心裙</h3>
+            <h3 class="assertive">￥115</h3>
+            <p>价格：<span class="dark line-through">￥150</span></p>
+            <div class="row dark">
+                <span class="col col-33">快递 免邮费</span>
+                <span class="col col-33">月销62笔</span>
+                <span class="col col-33">辽宁鞍山</span>
+            </div>
+
+        </div>
+        <div id="selectColor" class="card" ng-click="modal.show()">
+            <span>选择颜色分类</span>
+            <span class="more icon ion-ios-arrow-right icon-right"></span>
+        </div>
+        <div class="card" id="comment">
+            <div ng-repeat="item in comment">
+                <h5>宝贝评价（1）</h5>
+                <img ng-src="{{item.fUserImg}}">
+                <span class="dark">{{item.fUserName}}</span>
+                <p>{{item.fContent}}</p>
+                <span>{{item.fDate}}</span>
+            </div>
+            <button class="button button-light button-full">查看更多评论</button>
+        </div>
+        <div class="card" id="shop">
+            <div ng-repeat="item in shop">
+                <div class="row">
+                    <div class="col col-20">
+                        <img ng-src="{{item.fShopImg}}">
+                    </div>
+                    <div class="col col-80">
+                        <h4>{{item.fShopName}}</h4>
+                        <p>{{item.fLevel}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <span class="col col-40 dark">描述相符：<span class="assertive">{{item.fConsistent}}</span></span>
+                    <span class="col col-40 dark">服务态度：<span class="balanced">{{item.fService}}</span></span>
+                </div>
+                <div class="row xiaoliang">
+                    <div class="col col-50">
+                        <h6>{{item.fGoodsNumber}}</h6>
+                        <span>全部宝贝</span>
+                    </div>
+                    <div class="col col-50">
+                        <h6>{{item.fFocusNumber}}</h6>
+                        <span>关注人数</span>
+                    </div>
+                </div>
+                <div class="row link">
+                    <button class="col col-30 button button-outline button-balanced icon ion-android-list">查看宝贝分类</button>
+                    <button class="col col-30 button button-outline button-balanced icon ion-bag">进店逛逛</button>
+                </div>
+            </div>
+        </div>
+        <div class="card buttons-bar">
+            <div class="row productInfo">
+                <button class="col col-50 button button-light" ng-click="setState(1)">图文详情</button>
+                <button class="col col-50 button button-light" ng-click="setState(2)">产品参数</button>
+            </div>
+        </div>
+        <div class="picText card" ng-show="state1">
+            <img src="images/pic13.png">
+            <h4>天天特价女装连衣裙夏波西米亚沙滩裙海边度假长裙印花雪纺背心裙</h4>
+        </div>
+        <div  class="params card" ng-show="state2" id="params">
+            <ion-list>
+                <ion-item ng-repeat="item in parameter">
+                <span class="fName">
+                    {{item.fName}}
+                </span>
+                <span class="fParameter">
+                    {{item.fParameter}}
+                </span>
+                </ion-item>
+            </ion-list>
+        </div>
+    </ion-content>
+    <script id="views/modal.html" type="text/ng-template">
+        <ion-modal-view id="mymodal">
+            <div class="item-thumbnail-left">
+                <img src="images/pic13.png">
+                <h4 class="assertive">￥115</h4>
+                <h6>库存62件</h6>
+                <span>请选择颜色分类</span>
+                <span id="close" class="close" ng-click="closeColor()">&times;</span>
+            </div>
+            <h2>颜色分类</h2>
+            <ion-list id="color">
+                <ion-item class="stable-bg" ng-repeat="item in color" ng-click="selectColor(item)" ng-class="activeClass(item)">
+                    {{item}}
+                </ion-item>
+            </ion-list>
+            <div class="clearfix"></div>
+            <div id="buttons">
+                <button class="button button-energized">加入购物车</button>
+                <button class="button button-assertive">立即购买</button>
+            </div>
+        </ion-modal-view>
+    </script>
+</ion-view>

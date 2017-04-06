@@ -1,0 +1,27 @@
+#LoveAmoy .slider{
+    height: 100%; /*全屏*/
+    /*text-align: center;*/
+}
+#LoveAmoy .slider-slide{
+    height: 100%;
+    /*font-size: 20em;*/
+    /*padding-top: 100px;*/
+}
+#LoveAmoy img{
+    width: 100%;
+    height: 100%;
+}
+#skip{
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background-color: #ccc;
+    border-radius: 50%;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    z-index: 1000;
+    text-align: center;
+    font-size: 15px;
+    padding-top: 10px;
+}

@@ -1,0 +1,177 @@
+<ion-view class="stable-bg" id="home"> <!--view-title="首页"-->
+    <!--头部区 ion-ios-chatbubble-->
+    <ion-header-bar ng-click="ScrollTop()">
+        <div class="home-title tabs tabs-icon-top tabs-assertive">
+            <a class="tab-item" href="">
+                <i class="icon ion-android-expand"></i>
+                扫一扫
+            </a>
+            <label class="item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text"id="search" value="好6的篮球鞋">
+            </label>
+            <a class="tab-item has-badge" href="">
+                <i class="icon ion-android-textsms"></i>
+                消息
+                <i class="badge badge-light">5</i>
+            </a>
+        </div>
+    </ion-header-bar>
+    <!--内容区-->
+    <ion-content>
+        <!--幻灯片-->
+        <ion-slide-box auto-play="true" slide-interval="1000" show-pager="true" does-continue="true">
+            <ion-slide>
+                <div class="box">
+                    <img src="images/picPlay1.jpg">
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box">
+                    <img src="images/picPlay2.jpg">
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box">
+                    <img src="images/picPlay3.jpg">
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box">
+                    <img src="images/picPlay7.png">
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box">
+                    <!--<img src="images/picPlay5.jpg">-->
+                    <img src="images/picPlay8.jpg">
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box">
+                    <!--<img src="images/picPlay6.jpg">-->
+                    <img src="images/picPlay9.jpg">
+                </div>
+            </ion-slide>
+        </ion-slide-box>
+        <!--菜单-->
+        <div class="light-bg">
+            <div class="row">
+                <a class="col lovelyMenu" href="http://www.tmall.com">
+                    <img src="images/menu1.png"><br>
+                    天猫
+                </a>
+                <a class="col lovelyMenu" href="https://ju.taobao.com/">
+                    <img src="images/menu2.png"><br>
+                    聚划算
+                </a>
+                <a class="col lovelyMenu" href="https://taolive.tmall.com">
+                    <img src="images/menu3.png"><br>
+                    淘生活
+                </a>
+                <a class="col lovelyMenu" href="http://www.taodiandian.org">
+                    <img src="images/menu4.png"><br>
+                    淘点点
+                </a>
+                <a class="col lovelyMenu" href="http://www.tmall.com">
+                    <img src="images/menu5.png"><br>
+                    天猫超市
+                </a>
+            </div>
+            <div class="row">
+                <a class="col lovelyMenu" href="http://www.tmall.com">
+                    <img src="images/menu6.png"><br>
+                    充值
+                </a>
+                <a class="col lovelyMenu" href="http://www.tmall.com">
+                    <img src="images/menu7.png"><br>
+                    旅行
+                </a>
+                <a class="col lovelyMenu" href="http://www.tmall.com">
+                    <img src="images/menu8.png"><br>
+                    金币
+                </a>
+                <a class="col lovelyMenu" href="http://www.tmall.com">
+                    <img src="images/menu9.png"><br>
+                    宝箱
+                </a>
+                <a class="col lovelyMenu" href="#">
+                    <img src="images/menu10.png"><br>
+                    分类
+                </a>
+            </div>
+        </div>
+        <!--广告图片-->
+        <div class="row adver1 light-bg">
+            <div class="col col-50">
+                <img src="images/hotPic1.png">
+            </div>
+            <div class="col col-50">
+                <div class="row img-top">
+                    <img src="images/hotPic2.png">
+                </div>
+                <div class="row img-bottom">
+                    <div class="col">
+                        <img src="images/hotPic3.png">
+                    </div>
+                    <div class="col">
+                        <img src="images/hotPic4.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row adver2 light-bg">
+            <div class="col col-50">
+                <img src="images/hotPic5.png">
+            </div>
+            <div class="col">
+                <img src="images/hotPic6.png">
+            </div>
+            <div class="col">
+                <img src="images/hotPic7.png">
+            </div>
+            <div class="col">
+                <img src="images/hotPic8.png">
+            </div>
+        </div>
+        <!--下拉刷新-->
+        <ion-refresher pulling-text="下拉刷新中..." pulling-icon="icon ion-ios-loop-strong" on-pulling="doRefresher()"></ion-refresher>
+        <!--猜您喜欢-->
+        <div id="guess" class="light-bg">
+            <h4 class="title text-left">猜您喜欢</h4>
+            <hr>
+           <div class="row">
+               <div class="col col-50">
+                   <ion-list>
+                       <a ng-repeat="item in guess | evenFilter:true" href="#/tabs/detail">
+                           <img ng-src="{{item.fImg}}">
+                           <h5>{{item.fTitle}}</h5>
+                           <span class="assertive">{{item.fPrice | currency:"￥"}}</span>
+                           <p class="dark">
+                               <span>月销{{item.fRecord}}笔</span>
+                               <span class="fPostage">{{item.fPostage}}</span>
+                           </p>
+                       </a>
+                       <!--上拉刷新，无限滚动-->
+                       <ion-infinite-scroll distance="1%" immediate-check="false" on-infinite="loadMore()"></ion-infinite-scroll>
+                   </ion-list>
+               </div>
+               <div class="col col-50">
+                   <ion-list>
+                       <a ng-repeat="item in guess | evenFilter:false" href="#tabs/detail">
+                           <img ng-src="{{item.fImg}}">
+                           <h5>{{item.fTitle}}</h5>
+                           <span class="assertive">{{item.fPrice | currency:"￥"}}</span>
+                           <p class="dark">
+                               <span>月销{{item.fRecord}}笔</span>
+                               <span class="fPostage">{{item.fPostage}}</span>
+                           </p>
+                       </a>
+                       <!--上拉刷新，无限滚动-->
+                       <ion-infinite-scroll distance="1%" immediate-check="false" on-infinite="loadMore()"></ion-infinite-scroll>
+                   </ion-list>
+               </div>
+           </div>
+        </div>
+    </ion-content>
+</ion-view>

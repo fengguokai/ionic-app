@@ -1,0 +1,121 @@
+#intro{
+    text-align: center;
+    background: transparent;
+    background-color: #ccc;
+}
+#intro img{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    vertical-align: top;
+}
+#intro .back,#intro .cart{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #4d4d4d;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    z-index: 1000;
+}
+#intro .back{
+    position: fixed;
+    left: 5px;
+    top: 5px;
+}
+#intro .cart{
+    position: fixed;
+    right: 5px;
+    top: 5px;
+}
+#goodInfo{
+    padding: 10px;
+}
+.line-through{
+    text-decoration: line-through;
+}
+#selectColor,#comment{
+    margin: 10px 0;
+    padding: 10px;
+}
+.more{
+    float: right;
+}
+#mymodal{
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    min-height: 70%;
+}
+#color .item{
+    float: left;
+    margin: 2px 5px;
+    text-align: center;
+    width: 45%;
+}
+#buttons{
+    margin: 10px 1px;
+}
+#buttons .button{
+    width: 49%;
+}
+#close{
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 25px;
+}
+#comment img{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+#shop img{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+.xiaoliang{
+    text-align: center;
+}
+.link{
+    text-align: center;
+}
+.link .button{
+    margin:5px;
+    padding: 5px;
+    height: 50px;
+    min-height: 50px;
+}
+.productInfo .button{
+    height: 35px;
+    min-height: 30px;
+}
+.picText{
+    text-align: center;
+    padding: 20px;
+}
+.picText img{
+    width: 300px;
+    height: 300px;
+}
+.picText h4{
+    text-align: left;
+}
+#params{
+    margin-top: 0px;
+}
+.params .fName{
+    width: 30%;
+    display: inline-block;
+    color: #ccc;
+}
+.params .fParameter{
+    width: 70%;
+}

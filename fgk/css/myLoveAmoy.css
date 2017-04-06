@@ -1,0 +1,29 @@
+#Loginbuttons{
+    text-align: center;
+    padding: 40px 0;
+}
+#Loginbuttons button{
+   width: 20%;
+    height: 40px;
+    min-height: 35px;
+}
+.myInfo .icon{
+    font-size: 25px;
+}
+#remmcon td{
+    border: 1px solid #ccc;
+    text-align: center;
+    height: 90px;
+    width: 25%;
+    padding: 20px 0;
+}
+#remmcon .icon{
+    color: darkorange;
+    font-size: 30px;
+}
+#remmcon .second .icon{
+    color: #ff0099;
+}
+#remmcon table{
+    width: 100%;
+}
